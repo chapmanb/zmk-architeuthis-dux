@@ -7,20 +7,45 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+/* Avoid issues with double keypresses on Purpz and other light keys
+ * https://discord.com/channels/719497620560543766/719909884769992755/882965364038844446
+ */
+&kscan0 {
+    debounce-period = <20>;
+};
+
+#define DEFAULT 0
+#define NUM 1
+#define NAV 2
+
 / {
 
 	keymap {
 		compatible = "zmk,keymap";
 
-		// This is a sample keymap intended to be replaced with your own
 		base_layer {
 			bindings = <
-				&kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P
-				&kp A     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &kp SEMI
-				&kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
-				                              &kp TAB   &kp BSPC  &kp SPACE &kp ENTER
+				&mt LALT Q    &kp W   &kp E     &kp R        &kp T           &kp Y          &kp U         &kp I     &kp O     &kp P
+				&kp A         &kp S   &kp D     &kp F        &kp G           &kp H          &kp J         &kp K     &kp L     &mt RSHIFT ESC
+				&mt LSHIFT Z  &kp X   &kp C     &mt LCTRL V  &kp B           &kp N          &lt RCTRL M   &kp COMMA &kp DOT   &mt RALT SLASH
+				                                &kp TAB      &lt NUM ENTER   &lt NAV SPACE  &kp BSPC
 			>;
 		};
-
+		num_layer {
+			bindings = <
+				&reset      &none   &none  &none     &none       &kp PLUS      &kp N7   &kp N8  &kp N9   &kp N0
+				&bootloader &none   &none  &kp TILDE &kp GRAVE   &kp ASTERISK  &kp N4   &kp N5  &kp N6   &kp EQUAL
+				&none       &none   &none  &none     &kp LCTRL   &kp AMPERSAND &kp N1   &kp N2  &kp N3   &kp BACKSLASH
+				                       &mo NUM   &none       &none         &kp ESC
+			>;
+		};
+		nav_layer {
+			bindings = <
+				&kp EXCLAMATION &kp AT      &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE          &none        &kp LG(TAB)    &kp SEMICOLON  &kp COLON  &kp DOUBLE_QUOTES
+				&kp HASH        &kp DOLLAR  &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp MINUS         &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT  &kp APOSTROPHE
+				&kp PERCENTAGE  &kp CARET   &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp UNDERSCORE    &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME       &kp END    &kp AMPERSAND 
+				                                                 &none                 &kp LEFT_META     &mo NAV      &kp LG(L)
+			>;
+		};
 	};
 };
