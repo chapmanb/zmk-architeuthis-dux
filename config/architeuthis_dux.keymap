@@ -15,7 +15,7 @@
  * https://discord.com/channels/719497620560543766/719909884769992755/882965364038844446
  */
 &kscan0 {
-    debounce-period = <20>;
+    debounce-period = <15>;
 };
 
 / {
@@ -27,7 +27,7 @@
 			bindings = <
 				&mt LALT Q    &kp W   &kp E     &kp R        &kp T           &kp Y          &kp U         &kp I     &kp O     &kp P
 				&kp A         &kp S   &kp D     &kp F        &kp G           &kp H          &kp J         &kp K     &kp L     &mt RSHIFT ESC
-				&mt LSHIFT Z  &kp X   &kp C     &mt LCTRL V  &kp B           &kp N          &lt RCTRL M   &kp COMMA &kp DOT   &mt RALT SLASH
+				&mt LSHIFT Z  &kp X   &kp C     &mt LCTRL V  &kp B           &kp N          &mt RCTRL M   &kp COMMA &kp DOT   &mt RALT SLASH
 				                                &kp TAB      &lt NUM ENTER   &lt NAV SPACE  &kp BSPC
 			>;
 		};
