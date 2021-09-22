@@ -33,7 +33,7 @@
 		};
 		num_layer {
 			bindings = <
-				&none  &bt BT_CLR &none  &none     &none       &kp PLUS      &kp N7   &kp N8  &kp N9   &kp N0
+				&none  &bt BT_CLR &none  &none     &none    &kp PLUS      &kp N7   &kp N8  &kp N9   &kp N0
 				&none  &none   &none  &kp TILDE &kp GRAVE   &kp ASTERISK  &kp N4   &kp N5  &kp N6   &kp EQUAL
 				&none  &none   &none  &none     &kp LCTRL   &kp AMPERSAND &kp N1   &kp N2  &kp N3   &kp BACKSLASH
 				                           &mo NUM   &none       &none         &kp ESC
@@ -41,7 +41,7 @@
 		};
 		nav_layer {
 			bindings = <
-				&kp EXCLAMATION &kp AT      &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE          &none        &kp LG(TAB)    &kp SEMICOLON  &kp COLON  &kp DOUBLE_QUOTES
+				&kp EXCLAMATION &kp AT      &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE          &bt BT_CLR   &kp LG(TAB)    &kp SEMICOLON  &kp COLON  &kp DOUBLE_QUOTES
 				&kp HASH        &kp DOLLAR  &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp MINUS         &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT  &kp APOSTROPHE
 				&kp PERCENT     &kp CARET   &kp LEFT_BRACKET     &kp RIGHT_BRACKET     &kp UNDERSCORE    &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME       &kp END    &kp AMPERSAND 
 				                                                 &none                 &kp LEFT_META     &mo NAV      &kp LG(L)
